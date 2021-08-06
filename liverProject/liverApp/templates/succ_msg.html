@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Liver patient Survival Predicition: one year </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Hepatitis_c_vir_antibody:{{data_bgr}}</p>
+      <p>Aspartate_Transaminase:{{data_bu}}</p>
+      <p>Nonalcoholic_steatohepatitis:{{data_sc}}</p>
+      <p>hemochromatosis:{{data_pcv}}</p>
+      <p>oxygen_saturation:{{data_wc}}</p>
+      <br>
+
+      {% if data_ch == '0' %}
+        <p>Liver patient Survival Predicition<b>Low Risk</b></p>
+
+      {% else %}
+
+        <p>Liver patient Survival Predicition: <b>High Risk</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'liverApp:liver' %}">Liver patient Survival Predicition</a>
+    <br>
+</div>
+{% endblock %}
